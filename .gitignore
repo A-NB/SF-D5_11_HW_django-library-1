@@ -1,0 +1,11 @@
+.vscode/
+.vs/
+.idea/
+fixtures/
+venv/
+__pycache__/
+p_library/templates/p_library/manage_authors.html
+p_library/templates/p_library/manage_books_authors.html
+
+#Database
+*.sqlite3
