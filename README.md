@@ -27,11 +27,11 @@
 ### <center>Установка и запуск</center>
 Склонируйте репозиторий на локальный компьютер, введя в консоли команду:
 ```
-git clone https://github.com/A-NB/SF-D5_11_HW_django-library.git
+git clone https://github.com/A-NB/SF-D5_11_HW_django-library-1.git
 ```
 Затем необходимо перейти в папку проекта и создать для него виртуальное окружение:
 ```
-cd SF-D5_11_HW_django-library
+cd SF-D5_11_HW_django-library-1
 python -m venv venv
 ```
 Дождитесь завершения операции, после чего активируйте виртуальное окружение:
