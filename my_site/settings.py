@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('p_library_django_SECRET_KEY') #'django-insecure-))h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True)) #DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com'] #ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] #ALLOWED_HOSTS = ['.herokuapp.com'] #
 
 
 # Application definition
@@ -80,15 +80,22 @@ TEMPLATES = [
 WSGI_APPLICATION = 'my_site.wsgi.application'
 
 
+# Закомментировал 04112022
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+
 
 
 # Password validation
@@ -137,11 +144,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = ['127.0.0.1',]
 
-# Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
+
+
+# Закомментировал 04112022
+# # Heroku: Update database configuration from $DATABASE_URL.
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+
+# # Configure Django App for Heroku.
+# import django_heroku
+# django_heroku.settings(locals())
+
+
+# ТАК НАПИСАНО В КУРСЕ SkillFactory
+import dj_database_url  
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
