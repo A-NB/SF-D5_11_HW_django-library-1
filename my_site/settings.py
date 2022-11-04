@@ -80,19 +80,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'my_site.wsgi.application'
 
 
-# Закомментировал 04112022
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
@@ -153,11 +153,11 @@ INTERNAL_IPS = ['127.0.0.1',]
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
 
-# # Configure Django App for Heroku.
-# import django_heroku
-# django_heroku.settings(locals())
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
 
 
-# ТАК НАПИСАНО В КУРСЕ SkillFactory
-import dj_database_url  
-DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+# # ТАК НАПИСАНО В КУРСЕ SkillFactory
+# import dj_database_url  
+# DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
